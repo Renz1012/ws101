@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Car Management{% endblock %}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+        }
+
+        .container {
+            width: 3000px;
+            max-width: 90%;
+            background-color: #ffffff; 
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            color: white;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 80px;
+            margin-bottom: 20px;
+            color: #211ec7; /
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 35px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            text-align: center;
+            font-size: 35px;
+            color: #bbbbbb;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #44cc93; 
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            margin: 10px auto;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #333399; 
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .car-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 0;
+        }
+
+        .car-list li {
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .car-list li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .car-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .car-brand {
+            font-size: 16px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .delete-form,
+        .edit-form {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .delete-button,
+        .save-button,
+        .cancel-button {
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        .delete-button {
+            background-color: #e74c3c; /* Red for delete */
+        }
+
+        .delete-button:hover {
+            background-color: #c0392b; /* Darker red */
+        }
+
+        .save-button {
+            background-color: #2ecc71; /* Green for save */
+        }
+
+        .save-button:hover {
+            background-color: #27ae60; /* Darker green */
+        }
+
+        .cancel-button {
+            background-color: #34495e; /* Dark gray for cancel */
+        }
+
+        .cancel-button:hover {
+            background-color: #2c3e50; /* Darker gray */
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #4444cc;
+        }
+
+        .input-field::placeholder {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

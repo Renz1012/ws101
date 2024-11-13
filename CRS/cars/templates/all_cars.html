@@ -1,0 +1,27 @@
+{% extends "master.html" %}
+
+{% block title %}
+Car Catalog
+{% endblock %}
+
+{% block content %}
+
+<h1>Car Catalog:</h1>
+
+<!-- Add New Car button -->
+
+<ul>
+    {% for car in my_cars %}
+    <li>
+        <a href="details/{{ car.id }}" class="car-name">{{ car.car_name }}</a>
+        <div class="car-brand">Brand: {{ car.car_brand }}</div>
+    </li>
+    {% endfor %}
+</ul>
+
+<div class="button-container">
+    <a href="{% url 'create_car' %}" class="button">Add New Car</a>
+    <a href="/" class="button">Home</a>
+</div>
+
+{% endblock %}

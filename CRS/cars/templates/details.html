@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+
+{% block title %}
+Details about {{ my_cars.car_name }} by {{ my_cars.car_brand }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ my_cars.car_name }} by {{ my_cars.car_brand }}</h1>
+<p>Car ID: {{ my_cars.car_id }}</p>
+<p>Car Type: {{ my_cars.car_type }}</p>
+
+<!-- Edit and Delete buttons -->
+<p>
+    <a href="{% url 'edit_car' my_cars.id %}" class="button">Edit</a>
+    <a href="{% url 'delete_car' my_cars.id %}" class="button" style="background-color: #dc3545;">Delete</a>
+</p>
+
+<p><a href="{% url 'cars' %}">Back to Car List</a></p>
+
+{% endblock %}

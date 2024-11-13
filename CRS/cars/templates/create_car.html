@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block title %}
+Add New Car
+{% endblock %}
+
+{% block content %}
+<h1>ADD NEW CAR</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- This will render the form fields automatically -->
+    <div class="button-container">
+        <button type="submit" class="button">Add Car</button>
+        <a href="{% url 'cars' %}" class="button">Back to Car List</a>
+    </div>
+</form>
+
+{% endblock %}

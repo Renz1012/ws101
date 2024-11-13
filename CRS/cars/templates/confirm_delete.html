@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block title %}
+Delete Car: {{ car.car_name }}
+{% endblock %}
+
+{% block content %}
+<h1>Are you sure you want to delete "{{ car.car_name }}"?</h1>
+<form method="post" class="delete-form">
+    {% csrf_token %}
+    <div class="button-container">
+        <button type="submit" class="delete-button">Yes, delete it</button>
+        <a href="{% url 'cars' %}" class="cancel-button">Cancel</a>
+    </div>
+</form>
+{% endblock %}
